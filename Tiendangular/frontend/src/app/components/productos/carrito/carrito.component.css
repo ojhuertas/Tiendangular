@@ -1,0 +1,18 @@
+.carrito{
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+.carrito h4{
+    line-height: 0.5;
+}
+.carrito .precio{
+    font-size: 3em;
+    display: none;
+}
+.carrito .precio a{
+    margin-right: 10px;
+}
+.carrito .carritoItemImg{
+    border-radius: 15px;
+}

@@ -1,0 +1,44 @@
+.catalogo{
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+.catalogo h4{
+    line-height: 0.5;
+}
+.catalogo .card-title{
+    color: #fff;
+    font-weight: bold;
+}
+.catalogo .card{
+    border-radius: 15px 15px 15px 15px;
+}
+.catalogo .card-action{
+    border-radius: 0 0 15px 15px;
+}
+.catalogo .item p{
+    font-size: 2em;
+}
+.catalogo .card-image img{
+    border-radius: 15px;
+}
+
+.catalogo .card input{
+    font-size: 1.5em;
+    font-weight: bold;
+    width:58px;
+    height: 25px;
+    margin-left: 10px;
+    color: #fff;
+    margin-bottom: 0;   
+}
+
+.fa-search{
+    font-size: 3em;
+    text-shadow: 2px 2px 2px #666;
+}
+
+.fa-eye{
+    font-size: 2em;
+    text-shadow: 2px 2px 2px #666;
+}

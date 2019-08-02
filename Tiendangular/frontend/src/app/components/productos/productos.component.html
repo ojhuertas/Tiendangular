@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+        <app-catalogo></app-catalogo>
+    </div>
+  </div>
+
+  
+  <div class="row hide">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #productoForm="ngForm" (ngSubmit)="addProducto(productoForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="productoService.selectedProducto._id">
+            <div class="row">
+              <div class="input-field ol s12">
+                <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="productoService.selectedProducto.nombre" placeholder="Nombre">
+              </div>
+              <div class="input-field ol s12">
+                <input type="text" name="cantidad" #cantidad="ngModel" [(ngModel)]="productoService.selectedProducto.cantidad" placeholder="Cantidad">
+              </div>
+              <div class="input-field ol s12">
+                <input type="text" name="precio" #precio="ngModel" [(ngModel)]="productoService.selectedProducto.precio" placeholder="Precio">
+              </div>
+              <div class="input-field ol s12">
+                <input type="text" name="img" #img="ngModel" [(ngModel)]="productoService.selectedProducto.img" placeholder="Imagen">
+              </div>
+              <div class="card-action">
+                <div class="input-field col-s12">
+                  <button class="btn right" (click)="resetForm(productoForm)">Limpiar</button>
+                  <button class="btn">Save</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+      <table>
+        <thead>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productoService.productos">
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.cantidad }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.img }}</td>
+            <td>
+              <a (click)="editProducto(producto)">
+                <i class="material-icons">edit</i>
+              </a> 
+              <a (click)="deleteProducto(producto._id)">
+                <i class="material-icons">delete</i>
+              </a> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+</div>

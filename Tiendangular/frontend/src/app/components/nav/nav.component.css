@@ -1,0 +1,20 @@
+nav{
+    border-radius: 0 0 90px 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.nav-wrapper{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+sup{
+    background: red;
+    color: #fff;
+    padding: 6px 4px 2px 4px;
+    border-radius: 90px;
+    position: absolute; 
+    top: 15px;
+    right: 80px;
+    z-index: 10;
+    height: 15px;
+}

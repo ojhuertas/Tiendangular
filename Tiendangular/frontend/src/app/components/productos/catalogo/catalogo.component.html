@@ -1,0 +1,50 @@
+  <div class="row">
+    <div class="col s12">
+        <app-nav [carrito]="carritoCheckOut"></app-nav>
+    </div>
+  </div>
+  <div class="row catalogo">
+    <div class="col s12">
+      <div class="row">
+        <div class="col s9">
+          <h4>Catálogo de productos</h4>
+        </div>
+        <div class="col s3 botonBuscar">
+          <div class="row">
+            <div class="col s2">
+                <i class="fas fa-search red-text"></i>
+            </div>
+            <div class="col s10">
+                <input id="buscarProductos" name="buscarProductos" type="text" placeholder="Buscar" (keyup)="renderFiltro(buscarProductos.value)" #buscarProductos>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let producto of productoService.productos" class="col s3 item">
+      <div class="card blue-grey darken-1 z-depth-2">
+        <div class="card-content white-text">
+          <div class="card-image">
+            <img [src]="imgRuta(producto.img)">
+          </div><br>
+          <span class="card-title">{{producto.nombre}}</span>
+          <p><i class="fas fa-dollar-sign"></i> {{producto.precio}}</p>
+          <p><i class="fas fa-sort-amount-down"></i> {{producto.cantidad}}</p>
+        </div>
+        <div class="card-action center">
+          <div class="row" style="margin-bottom:0;">
+            <div class="col s2">
+                <button class="waves-effect waves-light btn" (click)="onClick(producto)"><i class="fas fa-eye"></i></button>
+            </div>
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" (click)="agregarProducto(producto,unidades.value)">Añadir</a>
+              <input type="number" id="unidades" name="unidades" min="1" max="{{ producto.cantidad }}" value="1" #unidades>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-detalle [detalleProducto]="detalleProducto" (cerrar)="cerrarDetalles()"></app-detalle>
+  <app-carrito [carritoLista]="carritoCheckOut" (cerrarC)="mostrarResultado()" ></app-carrito>
+

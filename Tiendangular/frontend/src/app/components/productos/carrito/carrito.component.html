@@ -1,0 +1,36 @@
+<div class="row carrito">
+  <div class="col s12">
+      <h4>Carrito de compras</h4><br><br>
+  </div>
+  <div class="col-s12 graciasCarrito center">
+    <h2>Gracias por tu compra!</h2>
+    <button class="waves-effect waves-light btn" (click)="seguirComprando()">Seguir comprando</button>
+  </div>
+  <div *ngIf="carritoItems == 0" class="col s12 center sinProductos">
+    <p>No se han seleccionado productos</p>
+  </div>
+  <div *ngFor="let item of carritoItems" class="col s12 item">
+    <div class="row">
+      <div class="col s1">
+          <img class="responsive-img carritoItemImg z-depth-2" src="../../../../assets/images/{{ item.img }}" alt="">
+      </div>
+      <div class="col s2">
+          <h5>{{ item.nombre }}</h5>
+      </div>
+      <div class="col s1">
+          <h4> <b>X {{ item.cantidad }}</b></h4>
+      </div>
+      <div class="col s8">
+          <h4>$ {{ item.precio }}</h4>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="col s12">
+    <div class="precio">
+      <b style="font-size:0.5em;">Total $ </b> <span class="precioCheckOutTotal"></span> <br>
+      <a class="waves-effect waves-light btn" (click)="cerrarCarrito()">Cancelar</a>
+      <a class="waves-effect waves-light btn" (click)="checkOut(carritoItems)">Pagar</a>
+    </div>
+  </div>
+</div>

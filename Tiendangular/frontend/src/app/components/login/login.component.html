@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row" style="margin-bottom:0;">
+    <form class="col s4 offset-s4" #loginForm="ngForm" (submit)="validarUsuario(loginForm)">
+      <div class="valign-wrapper loginConten center">
+        <div class="card-panel">
+          <span class="card-title">
+            <h6 style="margin-bottom:30px;">INGRESO A LA TIENDA</h6>
+          </span>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" name="email" #email="ngModel" [(ngModel)]="usuarioService.selectedUsuario.email" placeholder="Email" required>
+              <label for="email">Correo</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" name="password" #password="ngModel" [(ngModel)]="usuarioService.selectedUsuario.password" required>
+              <label for="password">Contraseña</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col-s12">
+              <button class="btn" [disabled]="loginForm.invalid">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+/*Detalle del producto*/
+.detalle{
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+.detalle h4{
+    line-height: 0.5;
+}
+.detalle img{
+    border-radius: 15px;
+}
+.detalle .infoDetalle{
+    font-size: 2em;
+}

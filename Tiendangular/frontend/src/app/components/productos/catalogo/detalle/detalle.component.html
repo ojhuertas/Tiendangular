@@ -1,0 +1,17 @@
+<div class="row detalle" *ngIf="detalleProducto">
+  <div class="col s12">
+    <h4>Detalle del producto</h4><br>
+  </div>
+  <div class="col s6">
+      <img class="responsive-img" src="../../../../../assets/images/{{ detalleProducto.img }}">
+  </div>
+  <div class="col s6 infoDetalle">
+    <h1>{{ detalleProducto.nombre }}</h1>
+    <i class="fas fa-sort-amount-down"></i> {{ detalleProducto.cantidad }} <br>
+    <i class="fas fa-tag"></i> {{ detalleProducto.precio }}
+  </div>
+  <div class="col s12 center">
+    <br>
+    <button class="btn" (click)="onCerrar()">Cerrar</button>
+  </div>
+</div>
